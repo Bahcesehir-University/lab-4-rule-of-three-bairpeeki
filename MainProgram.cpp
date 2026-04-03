@@ -121,7 +121,8 @@ m_data = new char[m_length + 1];
     // - Return *this
     DynamicBuffer& operator=(const DynamicBuffer& other) {
        g_assignmentCount++;
-       if(this==&other);
+       if(this==&other)
+       return *this;
        delete[] m_data;
        m_length =other.m_length;
        m_data = new char[m_length + 1];
